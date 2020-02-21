@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
+
 const ContactForm = () => {
   const [data, setData] = useState();
   const { register, errors, handleSubmit, reset } = useForm({
@@ -55,6 +56,14 @@ const ContactForm = () => {
             {JSON.stringify(data, null, 2)}
           </pre>
         )}
+        <div>
+        
+          <label htmlFor="IAmNotARobot">I Am Not A Robot</label>
+          <input type="checkbox" ref={register({required: true})} />
+          {errors.IAmNotARobot && (
+            <p>Looks like there was an error: {errors.IAmNotARobot.type}</p>
+          )}
+        </div>
         <input type="submit" />
       </form>
     </div>

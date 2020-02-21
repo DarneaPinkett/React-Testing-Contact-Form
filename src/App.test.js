@@ -1,5 +1,5 @@
 import React from "react";
-import { render, fireEvent } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import App from "./App";
 import 'mutationobserver-shim';
 
@@ -13,7 +13,7 @@ test ('first name in form', () => {
   expect(firstName).toBeInTheDocument();
 });
 
-test ('contains last name in form', () => {
+test ('last name in form', () => {
   const {getByText} = render(<App />);
   const lastName = getByText(/last name*/i);
   expect(lastName).toBeInTheDocument();
